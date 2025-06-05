@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="style.css">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body background="shool2" class="body_des">
+   
+    <center>
+        <div class="form_login">
+             <center class="title_des"><h1><b>Login Form</b></h1></center>
+            <form onsubmit="handleLogin(event)" class="login-box">
+    <div>
+        <label class="lab_des">Username</label>
+        <input type="text" id="username" required>
+    </div>
+    <div>
+        <label class="lab_des">Password</label>
+        <input type="password" required>
+    </div>
+    <div>
+        <input class="btn btn-primary" type="submit" value="Login">
+    </div>
+</form>
+
+        </div>
+    </center>
+
+    <script>
+function handleLogin(event) {
+    event.preventDefault();
+    const username = document.getElementById('username').value.trim();
+
+    if (username) {
+        localStorage.setItem("loggedInUser", username);
+        window.location.href = "indx.html";
+    } else {
+        alert("Please enter your username.");
+    }
+}
+</script>
+
+
+</body>
+</html>
